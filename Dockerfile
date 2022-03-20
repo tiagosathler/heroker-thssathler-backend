@@ -1,6 +1,6 @@
 FROM node:lts-alpine3.14
 
-WORKDIR /api
+WORKDIR /app
 
 COPY package.json .
 
@@ -14,4 +14,4 @@ ENV DB_USERNAME=postgres
 ENV DB_PASSWORD=W272d7@U@eyAgyv
 ENV DB_PORT=5432
 
-CMD ["node", "src/server.js"]
+CMD ["node", "src/api/server.js"]

@@ -1,3 +1,4 @@
+require('jest');
 const supertest = require('supertest');
 const app = require('../src/api/app');
 const { User } = require('../src/models');
@@ -16,7 +17,7 @@ describe('Resposta do endpoint GET /users', function () {
     },
   ];
 
-  before(async function () {
+  beforeEach(async function () {
       await jest.spyOn(User, 'findAll').mockImplementation(() => findAllMock);
     
       response = supertest(app).get('/users');
